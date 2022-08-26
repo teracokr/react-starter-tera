@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 
 // 일반적인 import
 import Layout from '../layouts/Layout'; 
+import GoogleCallback from "../auth/GoogleCallback";
 
 // 성능을 위해 
 // 불필요한 코드 불러오지 않게. 
@@ -23,7 +24,7 @@ const MyRouter = () => {
       </Route>
       <Route path="/login" element={<React.Suspense fallback={<>...</>}><Login /></React.Suspense>}/>
       <Route path="/mypage" element={<React.Suspense fallback={<>...</>}><MyPage /></React.Suspense>}/>
-      
+      <Route path="/api/auth/google/callback" element={<GoogleCallback />}/>
       <Route path="*" element={<React.Suspense fallback={<>...</>}><NotFound /></React.Suspense>}/>
     </Routes>
   );
