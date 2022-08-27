@@ -11,6 +11,7 @@ import GoogleCallback from "../auth/GoogleCallback";
 // Lazy Loading 적용
 const Home = React.lazy(() => import("../pages/Home"));
 const Login = React.lazy(() => import("../pages/Login"));
+const Logout = React.lazy(() => import("../pages/Logout"));
 const MyPage = React.lazy(() => import("../pages/MyPage"));
 const About = React.lazy(() => import("../pages/About"));
 const NotFound = React.lazy(() => import("../pages/NotFound"));
@@ -23,6 +24,7 @@ const MyRouter = () => {
         <Route path="/about" element={<React.Suspense fallback={<>...</>}><About /></React.Suspense>}/>
       </Route>
       <Route path="/login" element={<React.Suspense fallback={<>...</>}><Login /></React.Suspense>}/>
+      <Route path="/logout" element={<React.Suspense fallback={<>...</>}><Logout /></React.Suspense>}/>
       <Route path="/mypage" element={<React.Suspense fallback={<>...</>}><MyPage /></React.Suspense>}/>
       <Route path="/api/auth/google/callback" element={<GoogleCallback />}/>
       <Route path="*" element={<React.Suspense fallback={<>...</>}><NotFound /></React.Suspense>}/>
